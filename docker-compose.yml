@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  lojadebolo_db:
+    image: mysql:5.7
+    volumes:
+      - ./opt/docker/mysql/data/:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DB_NAME}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+    ports:
+      - ${MYSQL_PORT}:3306
